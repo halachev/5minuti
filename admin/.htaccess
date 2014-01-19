@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Login"
+AuthUserFile "/www/kazanlachani.com/www/root/admin/.htpasswd"
+Require valid-user

